@@ -1,0 +1,6 @@
+name: Create Release Candidate
+description: Creates a release candidate tag for the application version.
+author: Logan Fisher
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

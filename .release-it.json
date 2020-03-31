@@ -1,0 +1,27 @@
+{
+  "hooks": {
+    "before:bump": "sh before.sh"
+  },
+  "git": {
+    "changelog": "git log --pretty=format:\"* %s (%h)\" ${latestTag}...HEAD",
+    "requireCleanWorkingDir": false,
+    "requireBranch": false,
+    "requireUpstream": false,
+    "requireCommits": false,
+    "addUntrackedFiles": false,
+    "commit": true,
+    "commitMessage": "Release Candidate ${version}",
+    "commitArgs": [],
+    "tag": true,
+    "tagName": null,
+    "tagAnnotation": "Release Candidate ${version}",
+    "tagArgs": [],
+    "push": true,
+    "pushArgs": ["--follow-tags"],
+    "pushRepo": ""
+  },
+  "github": {
+    "release": false
+  }
+}
+  
