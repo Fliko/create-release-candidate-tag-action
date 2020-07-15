@@ -28,4 +28,4 @@ git checkout $branch
 
 echo "Running release-it"
 # $1 is the release type major, minor or patch
-DEBUG=release-it:* release-it ${RELEASE_TYPE} --preRelease=staging --ci --no-npm
+DEBUG=release-it:* release-it $RELEASE_TYPE --preRelease=staging --ci --no-npm
