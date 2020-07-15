@@ -19,10 +19,11 @@ git clone https://github.com/${REPO}.git
 echo "Adding remote for repo ${REPO}"
 git remote add origin https://github.com/${REPO}.git
 
-echo "Checking out Master branch"
+branch=${GITHUB_REF#refs/heads/}
+echo "Checking out $branch branch"
 git fetch
-git checkout origin/master
-git checkout master
+git checkout origin/$branch
+git checkout $branch
 
 
 echo "Running release-it"
