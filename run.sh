@@ -19,11 +19,13 @@ git clone https://github.com/${REPO}.git
 echo "Adding remote for repo ${REPO}"
 git remote add origin https://github.com/${REPO}.git
 
-echo "Checking out Staging branch"
+branch=${GITHUB_REF#refs/heads/}
+echo "Checking out $branch branch"
 git fetch
-git checkout origin/staging
-git checkout -b staging
+git checkout origin/$branch
+git checkout $branch
+
 
 echo "Running release-it"
 # $1 is the release type major, minor or patch
-DEBUG=release-it:* release-it ${RELEASE_TYPE} --preRelease=staging --ci --no-npm
+DEBUG=release-it:* release-it $RELEASE_TYPE --preRelease=staging --ci --no-npm
