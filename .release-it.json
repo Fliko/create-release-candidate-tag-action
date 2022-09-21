@@ -18,7 +18,7 @@
     "pushRepo": ""
   },
   "github": {
-    "release": false
+    "release": true
   }
 }
   
